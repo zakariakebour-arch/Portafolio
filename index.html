@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0; padding:0; box-sizing:border-box;}
+
+        body{
+            font-family:'Orbitron', sans-serif;
+            background:black;
+            color:white;
+            overflow-x:hidden;
+        }
+        body::before{
+            content:"";
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background:
+                linear-gradient(120deg, rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(60deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size:60px 60px;
+            pointer-events:none;
+            opacity:0.15;
+        }
+        #menu{
+            position:fixed;
+            top:20px;
+            right:30px;
+            display:flex;
+            flex-wrap: wrap;
+            gap:25px;
+            z-index:3000;
+        }
+        #menu a{
+            color:white;
+            text-decoration:none;
+            font-size:14px;
+            letter-spacing:3px;
+            padding:8px 12px;
+            border:1px solid rgba(255,255,255,0.3);
+            border-radius:8px;
+            text-shadow:0 0 10px white;
+            transition:0.3s;
+        }
+        #menu a:hover{
+            border-color:white;
+            box-shadow:0 0 10px white;
+        }
+        header{
+            position:relative;
+            height:500px;
+            overflow:hidden;
+        }
+        header video{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            opacity:0.8;
+            filter:blur(2px);
+        }
+        .header-text{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%, -50%);
+            text-align:center;
+            color:white;
+            text-transform:uppercase;
+            letter-spacing:8px;
+            font-size:40px;
+            text-shadow:0 0 10px white, 0 0 25px white;
+            animation: pulso 2s infinite alternate;
+        }
+        @keyframes pulso{
+            0%{text-shadow:0 0 10px white;}
+            100%{text-shadow:0 0 25px white;}
+        }
+        article{
+            padding:60px 10%;
+            margin:50px auto;
+            background:rgba(255,255,255,0.03);
+            border:1px solid rgba(255,255,255,0.2);
+            backdrop-filter:blur(5px);
+            border-radius:20px;
+            max-width:900px;
+            box-shadow:0 0 20px rgba(255,255,255,0.15);
+            opacity:0;
+            transform:translateY(60px);
+            transition:0.7s ease;
+            position:relative;
+            overflow:hidden;
+        }
+        article.visible{
+            opacity:1;
+            transform:translateY(0);
+        }
+
+        h2{
+            font-size:28px;
+            margin-bottom:20px;
+            text-transform:uppercase;
+            letter-spacing:4px;
+            color:white;
+        }
+        h2 span{
+            color:white;
+            text-shadow:0 0 8px white;
+        }
+
+        p, li{
+            font-size:17px;
+            line-height:1.7;
+        }
+
+        ul{margin-left:25px;}
+        article:hover{
+            transform:perspective(600px) rotateX(3deg) rotateY(-3deg);
+            box-shadow:0 0 25px white;
+            border-color:rgba(255,255,255,0.6);
+        }
+        article::before{
+            content:"";
+            position:absolute;
+            top:-100%;
+            left:0;
+            width:100%;
+            height:100%;
+            background:linear-gradient(
+                180deg,
+                transparent,
+                rgba(255,255,255,0.15),
+                transparent
+            );
+            animation: movimiento 2s  linear infinite;
+        }
+        @keyframes movimiento{
+            0%{top:-100%;}
+            100%{top:100%;}
+        }
+        footer{
+            background:black;
+            padding:40px;
+            display:flex;
+            justify-content:center;
+        }
+        .imagenes{
+            display:flex;
+            gap:50px;
+        }
+        .imagenes img{
+            width:45px;
+            filter:invert(1);
+            transition:0.3s;
+        }
+        .imagenes img:hover{
+            transform:scale(1.2);
+            filter:invert(1) drop-shadow(0 0 10px white);
+        }
+        #cursor{
+            position:fixed;
+            width:14px;
+            height:14px;
+            border:2px solid white;
+            border-radius:50%;
+            pointer-events:none;
+            transform:translate(-50%, -50%);
+            transition:0.08s linear;
+            z-index:9999;
+            box-shadow:0 0 10px white;
+        }
+        #flecha{
+            position: fixed;
+            bottom: 10px;
+            right: 20px;
+            display: none;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            z-index: 2000;
+        }
+    </style>
+</head>
+<body>
+    <nav id="menu">
+        <a href="#sobre-mi">SOBRE MÍ</a>
+        <a href="#proyectos">PROYECTOS</a>
+        <a href="#tecnologias">TECNOLOGÍAS</a>
+        <a href="#contacto">CONTACTO</a>
+        <a href="">CURRÍCULUM</a>
+    </nav>
+    <div id="cursor"></div>
+    <header>
+        <video autoplay loop muted playsinline>
+            <source src="video/video.mp4" type="video/mp4">
+        </video>
+        <div class="header-text">Zakaria Kebour Dahmoun</div>
+    </header>
+    <main>
+        <article id="sobre-mi">
+            <section>
+                <h2>Sobre <span>mí</span></h2>
+                <p>
+                    Soy un desarrollador web que manejo Python, MySQL, JavaScript y tengo buenos fundamentos en Java. Me interesa mejorar
+                    continuamente mis habilidades en desarrollo web moderno, especialmente en Flask y en la 
+                    conexión de bases de datos MySQL con Python y si es posible tambien bases de datos no relacionados. También tengo experiencia creando interfaces 
+                    responsivas con HTML, CSS y TailwindCSS y javascript.
+                </p>
+            </section>
+        </article>
+        <article id="python">
+            <h2>Python y Backend</h2>
+            <p>
+                Utilizo Python principalmente en el desarrollo backend, creando APIs REST y aplicaciones web 
+                ligeras con Flask. También conecto bases de datos MySQL desde Python para construir sistemas 
+                dinámicos y funcionales.
+            </p>
+        </article>
+        <article id="proyectos">
+            <h2>Proyectos:</h2>
+            <ul>
+                <li><strong>Gestor de tareas:</strong> Un simple gestor de tareas en html,css y javascript</li>
+                <li><strong>Portafolio interactivo:</strong> JS + animaciones + diseño minimalista.</li>
+                <li><strong>Una pagina web que consume API de perros:</strong>HTML css y javascript para recibir y tratar datos</li>
+                <li><strong>Aplicacion que permite desde un formulario registrar usuarios y guardar esa informacion en una base de datos MySQL</strong>Python + Flask + Mysql.connector</li>
+                <li><strong>Proximamente aplicaciones web mas completas y profundizar y aprender nuevas tecnologias.</strong></li>
+            </ul>
+        </article>
+        <article id="tecnologias">
+            <h2>Tecnologías que domino</h2>
+            <p>
+                <strong>Backend:</strong> Python (Flask), PHP, APIs REST, conexión MySQL–Python.<br><br>
+                <strong>Bases de datos:</strong> MySQL, proximamente datos no relacionados<br><br>
+                <strong>Frontend:</strong> HTML5, CSS3, diseño responsivo, JavaScript, TailwindCSS.<br><br>
+                <strong>Otros:</strong> Fundamentos de Java.
+            </p>
+        </article>
+        <article id="contacto">
+            <h2>Contacto</h2>
+            <p style="color:white; font-weight: bold;">zakariakebour@gmail.com</p>
+            <p style="color:white;font-weight: bold;">Tel: 602826397</p>
+        </article>
+    </main>
+    <footer>
+        <div class="imagenes">
+            <a href="https://github.com/zakariakebour-arch"><img src="imagenes/github.png" alt="Github"></a>
+            <a href="https://www.linkedin.com/in/zakaria-kebour-dahmoun-6b097b310/"><img src="imagenes/linkedin.png" alt="linkedin"></a>
+        </div>
+    </footer>
+    <img src="imagenes/flecha.png" alt="flecha" id="flecha">
+    <script>
+        const flecha = document.querySelector("#flecha");
+        const articles = document.querySelectorAll("article");
+        function reveal(){
+            const t = window.innerHeight * 0.85;
+            articles.forEach(a=>{
+                if(a.getBoundingClientRect().top < t){
+                    a.classList.add("visible");
+                }
+            });
+        }
+        window.addEventListener("scroll", reveal);
+        window.addEventListener("load", reveal);
+
+        const cursor = document.getElementById("cursor");
+        document.addEventListener("mousemove", e=>{
+            cursor.style.left = e.clientX + "px";
+            cursor.style.top = e.clientY + "px";
+        });
+        window.addEventListener("scroll",()=>{
+            if(scrollY > 30){
+                flecha.style.display = "block";
+            }
+            else{
+                flecha.style.display = "none";
+            }
+        });
+        flecha.addEventListener("click",()=>{
+            scrollTo({
+               top: 0,
+               behavior: "smooth" 
+            });
+        })
+    </script>
+</body>
+</html>
+
+
