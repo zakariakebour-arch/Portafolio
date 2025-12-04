@@ -17,7 +17,7 @@ function agregarMensaje(mensaje, clase) {
 async function mandarChatbot(mensajeUsuario) {
     historial.push({ role: "user", content: mensajeUsuario });
 
-    const respuesta = await fetch("https://backend-para-chatbot-gkx2.onrender.com/chat", {
+    const respuesta = await fetch("https://backend-para-chatbot-9s55.onrender.com/chat", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
