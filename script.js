@@ -4,7 +4,7 @@ const boton = document.querySelector("#enviar");
 const chatContainer = document.querySelector("#chat-container"); 
 const cursor = document.getElementById("cursor");
 
-
+let historial = [];
 
 function agregarMensaje(mensaje, clase) {
     const p = document.createElement("p");
