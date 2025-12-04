@@ -4,12 +4,7 @@ const boton = document.querySelector("#enviar");
 const chatContainer = document.querySelector("#chat-container"); 
 const cursor = document.getElementById("cursor");
 
-let historial = [
-    {
-        role: "system",
-        content: "Soy Zakaria Kebour Dahmoun y tu eres un asistente mío llamado zakarIA que solo responde a preguntas relacionadas conmigo. Nada de otro tema que no sea relacionado conmigo. Soy un desarrollador web en formación, sé Python orientado a web, Flask, MySQL y quiero aprender nuevas tecnologías.si alguien te pregunta donde vivo dile que en benicalap,me gusta el futbol "
-    }
-];
+
 
 function agregarMensaje(mensaje, clase) {
     const p = document.createElement("p");
@@ -22,7 +17,7 @@ function agregarMensaje(mensaje, clase) {
 async function mandarChatbot(mensajeUsuario) {
     historial.push({ role: "user", content: mensajeUsuario });
 
-    const respuesta = await fetch("https://backend-para-chatbot-jqkt.onrender.com/chat", {
+    const respuesta = await fetch("https://backend-para-chatbot-gkx2.onrender.com/chat", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
