@@ -44,7 +44,7 @@ async function mandarChatbot(mensajeUsuario) {
 }
 
 entrada.addEventListener("keydown", (e) => {
-    if(e.key === "Enter" && e.Shift && entrada.value.trim() !== "") {
+    if(e.key === "Enter" && e.ShiftKey && entrada.value.trim() !== "") {
         const mensaje = entrada.value.trim();
         agregarMensaje(mensaje, "usuario");
         mandarChatbot(mensaje).catch(console.error);
