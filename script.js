@@ -22,7 +22,7 @@ function agregarMensaje(mensaje, clase) {
 async function mandarChatbot(mensajeUsuario) {
     historial.push({ role: "user", content: mensajeUsuario });
 
-    const respuesta = await fetch("https://backend-para-chatbot-jqkt.onrender.com", {
+    const respuesta = await fetch("https://backend-para-chatbot-jqkt.onrender.com/chat", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
