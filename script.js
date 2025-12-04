@@ -10,6 +10,7 @@ let historial = [
         content: "Soy Zakaria Kebour Dahmoun y tu eres un asistente mío llamado zakarIA que solo responde a preguntas relacionadas conmigo. Nada de otro tema que no sea relacionado conmigo. Soy un desarrollador web en formación, sé Python orientado a web, Flask, MySQL y quiero aprender nuevas tecnologías.si alguien te pregunta donde vivo dile que en benicalap,me gusta el futbol "
     }
 ];
+
 function agregarMensaje(mensaje, clase) {
     const p = document.createElement("p");
     p.textContent = mensaje;
@@ -21,22 +22,19 @@ function agregarMensaje(mensaje, clase) {
 async function mandarChatbot(mensajeUsuario) {
     historial.push({ role: "user", content: mensajeUsuario });
 
-    const respuesta = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+    const respuesta = await fetch("https://tu-backend.onrender.com/chat", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json",
-            "Authorization": "Bearer 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",
-            "HTTP-Referer": "https://zakariakebour-arch.github.io/Portafolio/",
-            "X-Title": "Chat de Zakaria"
+            "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            model: "deepseek/deepseek-chat:free",
             messages: historial
         })
     });
 
     const dato = await respuesta.json();
-    const mensajeAsistente = dato.choices?.[0]?.message?.content;
+    const mensajeAsistente = dato.response;
+
     if (mensajeAsistente) {
         historial.push({ role: "assistant", content: mensajeAsistente });
         agregarMensaje(mensajeAsistente, "asistente");
