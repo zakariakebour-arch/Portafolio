@@ -1,7 +1,7 @@
 const flecha = document.querySelector("#flecha");
 const entrada = document.querySelector("#entrada");
 const boton = document.querySelector("#enviar");
-const chatContainer = document.querySelector("#chat-container"); // un contenedor donde mostraremos el chat
+const chatContainer = document.querySelector("#chat-container"); 
 const cursor = document.getElementById("cursor");
 
 let historial = [
