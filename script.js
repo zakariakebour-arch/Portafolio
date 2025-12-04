@@ -33,6 +33,7 @@ async function mandarChatbot(mensajeUsuario) {
     });
 
     const dato = await respuesta.json();
+    console.log(dato); // 👀 Para depurar y ver qué devuelve el backend
     const mensajeAsistente = dato.response;
 
     if (mensajeAsistente) {
