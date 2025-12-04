@@ -25,8 +25,8 @@ async function mandarChatbot(mensajeUsuario) {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer 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"
-            "HTTP-Referer": "https://github.com/zakariakebour-arch/Portafolio/",
+            "Authorization": "Bearer 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",
+            "HTTP-Referer": "https://zakariakebour-arch.github.io/Portafolio/",
             "X-Title": "Chat de Zakaria"
         },
         body: JSON.stringify({
