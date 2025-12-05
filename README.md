@@ -25,3 +25,5 @@ Este repositorio contiene mi portafolio personal, desarrollado con el objetivo d
 - Scripts integrados en el propio documento para controlar animaciones y eventos.
 d.
 
+El portafolio incluye un chatbot integrado que responda solo a preguntas sobre mi, integrado en el backend con python y desplegado en render.
+El fronted recibe la informacion del servidor en tiempo real para responder a preguntas.
