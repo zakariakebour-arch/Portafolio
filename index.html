@@ -461,6 +461,81 @@ footer{
     left:16px;
     bottom:16px;
 }
+.light-mode {
+    background: #f2f2f7 !important;
+    color: #000 !important;
+}
+
+.light-mode body {
+    background: #f2f2f7;
+}
+
+.light-mode body::before {
+    opacity: 0.12;
+    background:
+        linear-gradient(120deg, rgba(0,0,0,0.1) 1px, transparent 1px),
+        linear-gradient(60deg, rgba(0,0,0,0.1) 1px, transparent 1px);
+}
+.light-mode #menu a {
+    color: #000;
+    border: 1px solid rgba(0,0,0,0.3);
+    text-shadow: 0 0 5px #000;
+}
+.light-mode #menu a:hover {
+    border-color: #000;
+    box-shadow: 0 0 10px #000;
+}
+
+.light-mode article {
+    background: rgba(255,255,255,0.7);
+    border: 1px solid rgba(0,0,0,0.25);
+    box-shadow: 0 0 25px rgba(0,0,0,0.15);
+    color: #000;
+}
+.light-mode article:hover {
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    border-color: rgba(0,0,0,0.6);
+}
+.light-mode h2 span,
+.light-mode h2 {
+    color: #000;
+    text-shadow: 0 0 6px rgba(0,0,0,0.4);
+}
+.light-mode #chatbot {
+    background: rgba(255,255,255,0.8);
+    border: 1px solid rgba(0,0,0,0.2);
+    color: #000;
+}
+
+.light-mode .usuario {
+    background: #000;
+    color: #fff;
+}
+
+.light-mode .asistente {
+    background: linear-gradient(120deg, #ffffff, #e6e6e6);
+    color: #000;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.light-mode #entrada {
+    background: rgba(0,0,0,0.05);
+    color: #000;
+    border: 1px solid rgba(0,0,0,0.25);
+}
+.light-mode #entrada::placeholder {
+    color: rgba(0,0,0,0.5);
+}
+.light-mode #flecha {
+    filter: invert(0);
+}
+.light-mode .imagenes img {
+    filter: invert(0);
+}
+.light-mode #cursor {
+    border: 2px solid #000;
+    box-shadow: 0 0 10px #000;
+}
+
 </style>
 </head>
 
