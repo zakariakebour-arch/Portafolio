@@ -1,8 +1,8 @@
-const flecha = document.querySelector("#flecha");
-const entrada = document.querySelector("#entrada");
-const boton = document.querySelector("#enviar");
+const flecha   = document.querySelector("#flecha");
+const entrada  = document.querySelector("#entrada");
+const boton    = document.querySelector("#enviar");
 const chatContainer = document.querySelector("#chat-container"); 
-const cursor = document.getElementById("cursor");
+const cursor   = document.getElementById("cursor");
 
 let historial = [];
 
@@ -13,7 +13,6 @@ function agregarMensaje(mensaje, clase) {
     chatContainer.appendChild(p);
     chatContainer.scrollTop = chatContainer.scrollHeight; 
 }
-
 async function mandarChatbot(mensajeUsuario) {
     historial.push({ role: "user", content: mensajeUsuario });
 
@@ -38,7 +37,6 @@ async function mandarChatbot(mensajeUsuario) {
 
     return mensajeAsistente;
 }
-
 entrada.addEventListener("keydown", (e) => {
     if(e.key === "Enter" && !e.shiftKey && entrada.value.trim() !== "") {
         const mensaje = entrada.value.trim();
@@ -59,9 +57,8 @@ boton.addEventListener("click", () => {
 
 document.addEventListener("mousemove", e => {
     cursor.style.left = e.clientX + "px";
-    cursor.style.top = e.clientY + "px";
+    cursor.style.top  = e.clientY + "px";
 });
-
 window.addEventListener("scroll", () => {
     flecha.style.display = scrollY > 30 ? "block" : "none";
 });
@@ -69,30 +66,33 @@ window.addEventListener("scroll", () => {
 flecha.addEventListener("click", () => {
     scrollTo({ top: 0, behavior: "smooth" });
 });
-
 const articles = document.querySelectorAll("article");
 function reveal() {
     const t = window.innerHeight * 0.85;
     articles.forEach(a => {
-        if(a.getBoundingClientRect().top < t){
+        if (a.getBoundingClientRect().top < t){
             a.classList.add("visible");
         }
     });
 }
 window.addEventListener("scroll", reveal);
-window.addEventListener("load", reveal);
-// Aqui esta la configuracion para el cambio de modo oscuro a claro
-const toggle = document.querySelector(".theme-switch__checkbox");
-if (localStorage.getItem("tema") === "claro") {
-    document.body.classList.add("light-mode");
-    toggle.checked = true;
-}
-toggle.addEventListener("change", () => {
-    if (toggle.checked) {
+window.addEventListener("load",   reveal);
+
+document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.querySelector(".theme-switch__checkbox");
+
+    if (!toggle) return;
+    if (localStorage.getItem("tema") === "claro") {
         document.body.classList.add("light-mode");
-        localStorage.setItem("tema", "claro");
-    } else {
-        document.body.classList.remove("light-mode");
-        localStorage.setItem("tema", "oscuro");
+        toggle.checked = true;
     }
+    toggle.addEventListener("change", () => {
+        if (toggle.checked) {
+            document.body.classList.add("light-mode");
+            localStorage.setItem("tema", "claro");
+        } else {
+            document.body.classList.remove("light-mode");
+            localStorage.setItem("tema", "oscuro");
+        }
+    });
 });
