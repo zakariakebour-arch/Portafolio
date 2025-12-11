@@ -27,3 +27,4 @@ d.
 
 El portafolio incluye un chatbot integrado que responda solo a preguntas sobre mi, integrado en el backend con python y desplegado en render.
 El fronted recibe la informacion del servidor en tiempo real para responder a preguntas.
+Tambien esta la opcion de modo oscuro y modo claro
