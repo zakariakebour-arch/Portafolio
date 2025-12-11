@@ -81,3 +81,18 @@ function reveal() {
 }
 window.addEventListener("scroll", reveal);
 window.addEventListener("load", reveal);
+// Aqui esta la configuracion para el cambio de modo oscuro a claro
+const toggle = document.querySelector(".theme-switch__checkbox");
+if (localStorage.getItem("tema") === "claro") {
+    document.body.classList.add("light-mode");
+    toggle.checked = true;
+}
+toggle.addEventListener("change", () => {
+    if (toggle.checked) {
+        document.body.classList.add("light-mode");
+        localStorage.setItem("tema", "claro");
+    } else {
+        document.body.classList.remove("light-mode");
+        localStorage.setItem("tema", "oscuro");
+    }
+});
