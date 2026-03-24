@@ -14,11 +14,11 @@
   --font-display: 'Syne', sans-serif;
   --font-body: 'DM Sans', sans-serif;
 }
-
+ 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
 html { scroll-behavior: smooth; }
-
+ 
 body {
   font-family: var(--font-body);
   background: var(--bg);
@@ -27,7 +27,7 @@ body {
   line-height: 1.6;
   cursor: none;
 }
-
+ 
 /* ── CURSOR ── */
 #cursor {
   position: fixed;
@@ -50,7 +50,7 @@ body {
   transition: left 0.12s ease, top 0.12s ease;
   z-index: 9998;
 }
-
+ 
 /* ── NOISE OVERLAY ── */
 body::after {
   content: "";
@@ -60,7 +60,7 @@ body::after {
   z-index: 0;
   opacity: 0.5;
 }
-
+ 
 /* ── NAV ── */
 nav {
   position: fixed; top: 0; left: 0; right: 0;
@@ -89,7 +89,7 @@ nav {
   transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--white); }
-
+ 
 /* ── HERO ── */
 .hero {
   position: relative;
@@ -135,7 +135,7 @@ nav {
   animation: blink 1.5s ease-in-out infinite;
 }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
-
+ 
 .hero h1 {
   font-family: var(--font-display);
   font-size: clamp(42px, 7vw, 80px);
@@ -191,7 +191,7 @@ nav {
   border-color: rgba(255,255,255,0.35);
   background: rgba(255,255,255,0.04);
 }
-
+ 
 /* ── SECTION WRAPPER ── */
 .section {
   padding: 96px 48px;
@@ -224,7 +224,7 @@ nav {
   max-width: 500px;
   margin-bottom: 56px;
 }
-
+ 
 /* ── ABOUT ── */
 .about-grid {
   display: grid;
@@ -258,7 +258,7 @@ nav {
   font-size: 18px;
   margin-bottom: 20px;
 }
-
+ 
 /* ── TECH STACKS ── */
 .tech-section { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .tech-stacks {
@@ -310,7 +310,7 @@ nav {
   color: var(--white);
 }
 .tech-chip .icon { font-size: 15px; }
-
+ 
 /* ── PROJECTS ── */
 .projects-grid {
   display: grid;
@@ -355,7 +355,7 @@ nav {
   transition: gap 0.2s;
 }
 .project-link:hover { gap: 10px; }
-
+ 
 /* ── CHATBOT ── */
 .chat-wrapper {
   background: var(--surface);
@@ -451,7 +451,7 @@ nav {
   box-shadow: 0 0 20px rgba(79,142,247,0.4);
   transform: translateY(-1px);
 }
-
+ 
 /* ── CONTACT ── */
 .contact-card {
   background: var(--surface);
@@ -479,7 +479,7 @@ nav {
   transition: color 0.2s;
 }
 .contact-item a:hover { color: var(--white); }
-
+ 
 /* ── FOOTER ── */
 footer {
   border-top: 1px solid var(--border);
@@ -497,7 +497,7 @@ footer {
   transition: color 0.2s;
 }
 .footer-links a:hover { color: var(--white); }
-
+ 
 /* ── SCROLL TO TOP ── */
 #flecha {
   position: fixed; bottom: 28px; right: 28px;
@@ -516,14 +516,14 @@ footer {
   border-color: var(--border-hover);
   box-shadow: 0 0 20px rgba(79,142,247,0.2);
 }
-
+ 
 /* ── DIVIDER ── */
 .divider {
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--border), transparent);
   margin: 0 48px;
 }
-
+ 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   nav { padding: 16px 24px; }
