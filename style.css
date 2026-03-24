@@ -546,3 +546,7 @@ footer {
   .projects-grid { grid-template-columns: 1fr; }
   .hero-cta { flex-direction: column; align-items: center; }
 }
+img{ 
+    width: 150px;
+  height: 150px;
+  }
