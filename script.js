@@ -1,98 +1,81 @@
-const flecha   = document.querySelector("#flecha");
-const entrada  = document.querySelector("#entrada");
-const boton    = document.querySelector("#enviar");
-const chatContainer = document.querySelector("#chat-container"); 
-const cursor   = document.getElementById("cursor");
-
-let historial = [];
-
-function agregarMensaje(mensaje, clase) {
-    const p = document.createElement("p");
-    p.textContent = mensaje;
-    p.classList.add(clase);
-    chatContainer.appendChild(p);
-    chatContainer.scrollTop = chatContainer.scrollHeight; 
-}
-async function mandarChatbot(mensajeUsuario) {
-    historial.push({ role: "user", content: mensajeUsuario });
-
-    const respuesta = await fetch("https://backend-para-chatbot.onrender.com/chat", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            messages: historial
-        })
-    });
-
-    const dato = await respuesta.json();
-    console.log(dato); 
-    const mensajeAsistente = dato.response;
-
-    if (mensajeAsistente) {
-        historial.push({ role: "assistant", content: mensajeAsistente });
-        agregarMensaje(mensajeAsistente, "asistente");
-    }
-
-    return mensajeAsistente;
-}
-entrada.addEventListener("keydown", (e) => {
-    if(e.key === "Enter" && !e.shiftKey && entrada.value.trim() !== "") {
-        const mensaje = entrada.value.trim();
-        agregarMensaje(mensaje, "usuario");
-        mandarChatbot(mensaje).catch(console.error);
-        entrada.value = "";
-    }
-});
-
-boton.addEventListener("click", () => {
-    if(entrada.value.trim() !== "") {
-        const mensaje = entrada.value.trim();
-        agregarMensaje(mensaje, "usuario"); 
-        mandarChatbot(mensaje).catch(console.error);
-        entrada.value = "";
-    }
-});
-
+//Cursor
+const cursor = document.getElementById("cursor");
+const ring   = document.getElementById("cursor-ring");
 document.addEventListener("mousemove", e => {
-    cursor.style.left = e.clientX + "px";
-    cursor.style.top  = e.clientY + "px";
-});
-window.addEventListener("scroll", () => {
-    flecha.style.display = scrollY > 30 ? "block" : "none";
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top  = e.clientY + "px";
+  ring.style.left   = e.clientX + "px";
+  ring.style.top    = e.clientY + "px";
 });
 
-flecha.addEventListener("click", () => {
-    scrollTo({ top: 0, behavior: "smooth" });
-});
-const articles = document.querySelectorAll("article");
+//Scroll Reveal
+const reveals = document.querySelectorAll(".about-card, .tech-stack-card, .project-card, .chat-wrapper, .contact-card");
 function reveal() {
-    const t = window.innerHeight * 0.85;
-    articles.forEach(a => {
-        if (a.getBoundingClientRect().top < t){
-            a.classList.add("visible");
-        }
-    });
+  const threshold = window.innerHeight * 0.88;
+  reveals.forEach((el, i) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < threshold) {
+      setTimeout(() => el.classList.add("visible"), (i % 4) * 80);
+    }
+  });
 }
 window.addEventListener("scroll", reveal);
-window.addEventListener("load",   reveal);
+window.addEventListener("load", reveal);
 
-document.addEventListener("DOMContentLoaded", () => {
-    const toggle = document.querySelector(".theme-switch__checkbox");
+//Scroll Top
+const flecha = document.getElementById("flecha");
+window.addEventListener("scroll", () => {
+  flecha.classList.toggle("show", scrollY > 400);
+});
+flecha.addEventListener("click", () => scrollTo({ top: 0, behavior: "smooth" }));
 
-    if (!toggle) return;
-    if (localStorage.getItem("tema") === "claro") {
-        document.body.classList.add("light-mode");
-        toggle.checked = true;
-    }
-    toggle.addEventListener("change", () => {
-        if (toggle.checked) {
-            document.body.classList.add("light-mode");
-            localStorage.setItem("tema", "claro");
-        } else {
-            document.body.classList.remove("light-mode");
-            localStorage.setItem("tema", "oscuro");
-        }
+//Chatbot
+const entrada      = document.getElementById("entrada");
+const boton        = document.getElementById("enviar");
+const chatContainer = document.getElementById("chat-container");
+let historial = [];
+
+function agregarMensaje(msg, clase) {
+  const p = document.createElement("p");
+  p.textContent = msg;
+  p.classList.add(clase);
+  chatContainer.appendChild(p);
+  chatContainer.scrollTop = chatContainer.scrollHeight;
+}
+
+async function mandarChatbot(mensajeUsuario) {
+  historial.push({ role: "user", content: mensajeUsuario });
+  try {
+    const res  = await fetch("https://backend-para-chatbot.onrender.com/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ messages: historial })
     });
+    const dato = await res.json();
+    const msg  = dato.response;
+    if (msg) {
+      historial.push({ role: "assistant", content: msg });
+      agregarMensaje(msg, "asistente");
+    }
+  } catch(e) {
+    agregarMensaje("Error al conectar con el asistente. Inténtalo de nuevo.", "asistente");
+  }
+}
+
+entrada.addEventListener("keydown", e => {
+  if (e.key === "Enter" && !e.shiftKey && entrada.value.trim()) {
+    e.preventDefault();
+    const msg = entrada.value.trim();
+    agregarMensaje(msg, "usuario");
+    mandarChatbot(msg);
+    entrada.value = "";
+  }
+});
+boton.addEventListener("click", () => {
+  if (entrada.value.trim()) {
+    const msg = entrada.value.trim();
+    agregarMensaje(msg, "usuario");
+    mandarChatbot(msg);
+    entrada.value = "";
+  }
 });
