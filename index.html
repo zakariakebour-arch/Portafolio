@@ -3,132 +3,239 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portafolio - Chatbot</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
+<title>Zakaria Kebour — Tech Consultant</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
 
+</style>
+</head>
 <body>
-<nav id="menu">
-    <a href="#chatbot">Asistente IA</a>
-    <a href="#sobre-mi">SOBRE MÍ</a>
-    <a href="#proyectos">PROYECTOS</a>
-    <a href="#tecnologias">TECNOLOGÍAS</a>
-    <a href="#contacto">CONTACTO</a>
-    <a href="https://zakariakebour-arch.github.io/Curriculum/">CURRÍCULUM</a>
-</nav>
 
 <div id="cursor"></div>
+<div id="cursor-ring"></div>
 
-<header>
-    <video autoplay loop muted playsinline>
-        <source src="video/video.mp4" type="video/mp4">
-    </video>
-    <div class="header-text">Zakaria Kebour Dahmoun</div>
-</header>
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">ZK<span>.</span></span>
+  <ul class="nav-links">
+    <li><a href="#sobre-mi">Sobre mí</a></li>
+    <li><a href="#tecnologias">Tecnologías</a></li>
+    <li><a href="#proyectos">Proyectos</a></li>
+    <li><a href="#asistente">Asistente</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="https://zakariakebour-arch.github.io/Curriculum/" target="_blank">CV ↗</a></li>
+  </ul>
+</nav>
 
-<main>
-    <article id="sobre-mi">
-        <section>
-            <h2>Sobre <span>mí</span></h2>
-            <p>
-                Soy un desarrollador web con experiencia en Python, Docker, MySQL y JavaScript, con buenos fundamentos en Java.
-                Me especializo en el desarrollo de aplicaciones estructuradas bajo <strong>arquitectura en capas</strong>, 
-                separando claramente la presentación, la lógica de negocio y el acceso a datos. Tengo experiencia desplegando 
-                aplicaciones en <strong>AWS</strong> utilizando servicios como EC2 y S3. También manejo contenedores con 
-                <strong>Docker</strong> para entornos reproducibles y limpios. Además, creo interfaces responsivas con HTML, 
-                CSS, TailwindCSS y JavaScript.
-            </p>
-        </section>
-    </article>
-
-    <article id="python">
-        <h2>Python, Docker y Backend</h2>
-        <p>
-            Utilizo Python como lenguaje principal en el backend, desarrollando aplicaciones web con Flask organizadas en 
-            <strong>arquitectura en capas</strong>: rutas, servicios, repositorios y modelos claramente separados. 
-            Empaqueto mis aplicaciones con <strong>Docker</strong> para garantizar portabilidad y consistencia entre entornos. 
-            Tengo experiencia conectando bases de datos MySQL y desplegando en la nube con <strong>AWS EC2</strong>, 
-            usando <strong>Amazon S3</strong> para almacenamiento de archivos estáticos como imágenes de perfil.
-        </p>
-    </article>
-
-    <article id="proyectos">
-        <h2>Proyectos:</h2>
-        <ul>
-            <li>
-                <strong>SahlaFix:</strong> Aplicación web desarrollada en Python con Flask siguiendo 
-                <strong>arquitectura en capas</strong>. Desplegada en <strong>AWS</strong> mediante una instancia 
-                <strong>EC2</strong> y con un bucket <strong>S3</strong> para almacenar las imágenes de perfil de los usuarios. 
-                Sistema completo con autenticación, gestión de usuarios y subida de archivos a la nube.
-            </li>
-            <li><strong>Gestor de tareas:</strong> Un simple gestor de tareas en HTML, CSS y JavaScript.</li>
-            <li><strong>Portafolio interactivo:</strong> JS + animaciones + diseño minimalista.</li>
-            <li><strong>Página web que consume API de perros:</strong> HTML, CSS y JavaScript para recibir y tratar datos.</li>
-            <li><strong>Aplicación de registro de usuarios con MySQL:</strong> Formulario que registra usuarios y guarda la información en una base de datos MySQL — Python + Flask + mysql.connector.</li>
-            <li>
-                <strong>Tienda de zapatos:</strong> Los usuarios pueden iniciar sesión o registrarse y acceder al carrito. 
-                Desplegada con InfinityFree. 
-                <a href="https://mitiendazapatos.42web.io/" class="tienda">Enlace de la tienda</a>
-            </li>
-            <li><strong>Próximamente:</strong> Aplicaciones web más completas y profundización en nuevas tecnologías.</li>
-        </ul>
-    </article>
-
-    <article id="tecnologias">
-        <h2>Tecnologías que domino</h2>
-        <p>
-            <strong>Backend:</strong> Python (Flask), PHP, APIs REST, arquitectura en capas, conexión MySQL–Python.<br><br>
-            <strong>DevOps y Cloud:</strong> Docker, AWS EC2, AWS S3.<br><br>
-            <strong>Bases de datos:</strong> MySQL. Próximamente bases de datos no relacionales.<br><br>
-            <strong>Frontend:</strong> HTML5, CSS3, diseño responsivo, JavaScript, TailwindCSS.<br><br>
-            <strong>Otros:</strong> Fundamentos de Java.
-        </p>
-    </article>
-
-    <article id="contacto">
-        <h2>Contacto</h2>
-        <p style="color:white; font-weight:bold;">zakariakebour@gmail.com</p>
-        <p style="color:white;font-weight:bold;">Tel: 602826397</p>
-    </article>
-
-    <div id="chatbot">
-        <div id="chat-container"></div>
-        <textarea name="entrada" id="entrada" placeholder="Alguna pregunta?"></textarea>
-        <button type="submit" id="enviar">Enviar</button>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Disponible para proyectos</div>
+    <h1>
+      Zakaria<br>
+      <span class="gradient-text">Kebour Dahmoun</span>
+    </h1>
+    <p class="hero-sub">
+      Desarrollador web & consultor tecnológico. Arquitecturas robustas, soluciones cloud y experiencias digitales de alto rendimiento.
+    </p>
+    <div class="hero-cta">
+      <a href="#proyectos" class="btn-primary">Ver proyectos →</a>
+      <a href="#contacto" class="btn-secondary">Contactar</a>
     </div>
-</main>
+  </div>
+</section>
 
-<footer>
-    <div class="imagenes">
-        <a href="https://github.com/zakariakebour-arch"><img src="imagenes/github.png" alt="Github"></a>
-        <a href="https://www.linkedin.com/in/zakaria-kebour-dahmoun-6b097b310/"><img src="imagenes/linkedin.png" alt="linkedin"></a>
-    </div>
-</footer>
+<div class="divider"></div>
 
-<label class="theme-switch">
-  <input type="checkbox" class="theme-switch__checkbox">
-  <div class="theme-switch__container">
-    <div class="theme-switch__clouds"></div>
-    <div class="theme-switch__stars-container">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 55" fill="none">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M135.831 3.00688C135.055 3.85027 134.111 4.29946 133 4.35447C134.111 4.40947 135.055 4.85867 135.831 5.71123C136.607 6.55462 136.996 7.56303 136.996 8.72727C136.996 7.95722 137.172 7.25134 137.525 6.59129C137.886 5.93124 138.372 5.39954 138.98 5.00535C139.598 4.60199 140.268 4.39114 141 4.35447C139.88 4.2903 138.936 3.85027 138.16 3.00688C137.384 2.16348 136.996 1.16425 136.996 0C136.996 1.16425 136.607 2.16348 135.831 3.00688ZM31 23.3545C32.1114 23.2995 33.0551 22.8503 33.8313 22.0069C34.6075 21.1635 34.9956 20.1642 34.9956 19C34.9956 20.1642 35.3837 21.1635 36.1599 22.0069C36.9361 22.8503 37.8798 23.2903 39 23.3545C38.2679 23.3911 37.5976 23.602 36.9802 24.0053C36.3716 24.3995 35.8864 24.9312 35.5248 25.5913C35.172 26.2513 34.9956 26.9572 34.9956 27.7273C34.9956 26.563 34.6075 25.5546 33.8313 24.7112C33.0551 23.8587 32.1114 23.4095 31 23.3545ZM0 36.3545C1.11136 36.2995 2.05513 35.8503 2.83131 35.0069C3.6075 34.1635 3.99559 33.1642 3.99559 32C3.99559 33.1642 4.38368 34.1635 5.15987 35.0069C5.93605 35.8503 6.87982 36.2903 8 36.3545C7.26792 36.3911 6.59757 36.602 5.98015 37.0053C5.37155 37.3995 4.88644 37.9312 4.52481 38.5913C4.172 39.2513 3.99559 39.9572 3.99559 40.7273C3.99559 39.563 3.6075 38.5546 2.83131 37.7112C2.05513 36.8587 1.11136 36.4095 0 36.3545ZM56.8313 24.0069C56.0551 24.8503 55.1114 25.2995 54 25.3545C55.1114 25.4095 56.0551 25.8587 56.8313 26.7112C57.6075 27.5546 57.9956 28.563 57.9956 29.7273C57.9956 28.9572 58.172 28.2513 58.5248 27.5913C58.8864 26.9312 59.3716 26.3995 59.9802 26.0053C60.5976 25.602 61.2679 25.3911 62 25.3545C60.8798 25.2903 59.9361 24.8503 59.1599 24.0069C58.3837 23.1635 57.9956 22.1642 57.9956 21C57.9956 22.1642 57.6075 23.1635 56.8313 24.0069ZM81 25.3545C82.1114 25.2995 83.0551 24.8503 83.8313 24.0069C84.6075 23.1635 84.9956 22.1642 84.9956 21C84.9956 22.1642 85.3837 23.1635 86.1599 24.0069C86.9361 24.8503 87.8798 25.2903 89 25.3545C88.2679 25.3911 87.5976 25.602 86.9802 26.0053C86.3716 26.3995 85.8864 26.9312 85.5248 27.5913C85.172 28.2513 84.9956 28.9572 84.9956 29.7273C84.9956 28.563 84.6075 27.5546 83.8313 26.7112C83.0551 25.8587 82.1114 25.4095 81 25.3545ZM136 36.3545C137.111 36.2995 138.055 35.8503 138.831 35.0069C139.607 34.1635 139.996 33.1642 139.996 32C139.996 33.1642 140.384 34.1635 141.16 35.0069C141.936 35.8503 142.88 36.2903 144 36.3545C143.268 36.3911 142.598 36.602 141.98 37.0053C141.372 37.3995 140.886 37.9312 140.525 38.5913C140.172 39.2513 139.996 39.9572 139.996 40.7273C139.996 39.563 139.607 38.5546 138.831 37.7112C138.055 36.8587 137.111 36.4095 136 36.3545ZM101.831 49.0069C101.055 49.8503 100.111 50.2995 99 50.3545C100.111 50.4095 101.055 50.8587 101.831 51.7112C102.607 52.5546 102.996 53.563 102.996 54.7273C102.996 53.9572 103.172 53.2513 103.525 52.5913C103.886 51.9312 104.372 51.3995 104.98 51.0053C105.598 50.602 106.268 50.3911 107 50.3545C105.88 50.2903 104.936 49.8503 104.16 49.0069C103.384 48.1635 102.996 47.1642 102.996 46C102.996 47.1642 102.607 48.1635 101.831 49.0069Z" fill="currentColor"></path>
-      </svg>
+<!-- SOBRE MÍ -->
+<section class="section" id="sobre-mi">
+  <div class="section-label">Perfil profesional</div>
+  <h2 class="section-title">Enfoque técnico<br>& metodología</h2>
+  <p class="section-desc">Especializado en arquitecturas limpias, despliegues cloud y desarrollo full-stack estructurado.</p>
+  <div class="about-grid">
+    <div class="about-card">
+      <div class="card-icon">⚙️</div>
+      <h3>Arquitectura en capas</h3>
+      <p>Diseño aplicaciones separando claramente presentación, lógica de negocio y acceso a datos — mantenibles, escalables y testables desde el primer día.</p>
     </div>
-    <div class="theme-switch__circle-container">
-      <div class="theme-switch__sun-moon-container">
-        <div class="theme-switch__moon">
-          <div class="theme-switch__spot"></div>
-          <div class="theme-switch__spot"></div>
-          <div class="theme-switch__spot"></div>
+    <div class="about-card">
+      <div class="card-icon">☁️</div>
+      <h3>Cloud & DevOps</h3>
+      <p>Despliegue en AWS (EC2, S3) con Docker para entornos reproducibles. Flujos de trabajo modernos que minimizan tiempo de entrega y fricción operativa.</p>
+    </div>
+    <div class="about-card">
+      <div class="card-icon">🗄️</div>
+      <h3>Backend & Bases de datos</h3>
+      <p>APIs REST con Flask y Python, integración MySQL, autenticación segura y gestión de archivos en la nube. Próximamente: bases de datos no relacionales.</p>
+    </div>
+    <div class="about-card">
+      <div class="card-icon">🖥️</div>
+      <h3>Frontend moderno</h3>
+      <p>Interfaces responsivas y accesibles con HTML5, CSS3, JavaScript y TailwindCSS. Diseño orientado a usabilidad y rendimiento real.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TECNOLOGÍAS -->
+<section class="tech-section" id="tecnologias">
+  <div class="section" style="padding-bottom: 96px;">
+    <div class="section-label">Stack tecnológico</div>
+    <h2 class="section-title">Herramientas &<br>tecnologías</h2>
+    <p class="section-desc">Dominio sólido en cada capa del desarrollo moderno.</p>
+    <div class="tech-stacks">
+      <!-- Backend -->
+      <div class="tech-stack-card">
+        <div class="card-icon" style="margin-bottom:16px;">🔧</div>
+        <h3>Backend & Cloud</h3>
+        <p class="stack-sub">Servidor, APIs y despliegue</p>
+        <div class="tech-icons">
+          <span class="tech-chip"><span class="icon">🐍</span>Python</span>
+          <span class="tech-chip"><span class="icon">🌶️</span>Flask</span>
+          <span class="tech-chip"><span class="icon">🐘</span>PHP</span>
+          <span class="tech-chip"><span class="icon">☁️</span>AWS EC2</span>
+          <span class="tech-chip"><span class="icon">🪣</span>AWS S3</span>
+          <span class="tech-chip"><span class="icon">🐳</span>Docker</span>
+          <span class="tech-chip"><span class="icon">🔗</span>REST API</span>
+          <span class="tech-chip"><span class="icon">☕</span>Java</span>
+        </div>
+      </div>
+      <!-- Frontend -->
+      <div class="tech-stack-card">
+        <div class="card-icon" style="margin-bottom:16px;">🎨</div>
+        <h3>Frontend & UI</h3>
+        <p class="stack-sub">Interfaces y experiencia de usuario</p>
+        <div class="tech-icons">
+          <span class="tech-chip"><span class="icon">🌐</span>HTML5</span>
+          <span class="tech-chip"><span class="icon">🎨</span>CSS3</span>
+          <span class="tech-chip"><span class="icon">⚡</span>JavaScript</span>
+          <span class="tech-chip"><span class="icon">💨</span>TailwindCSS</span>
+          <span class="tech-chip"><span class="icon">📱</span>Responsive</span>
+          <span class="tech-chip"><span class="icon">✨</span>Animaciones</span>
+        </div>
+      </div>
+      <!-- Datos & Herramientas -->
+      <div class="tech-stack-card">
+        <div class="card-icon" style="margin-bottom:16px;">📊</div>
+        <h3>Datos & Herramientas</h3>
+        <p class="stack-sub">Bases de datos y entorno de trabajo</p>
+        <div class="tech-icons">
+          <span class="tech-chip"><span class="icon">🗄️</span>MySQL</span>
+          <span class="tech-chip"><span class="icon">🔌</span>mysql.connector</span>
+          <span class="tech-chip"><span class="icon">🐙</span>Git</span>
+          <span class="tech-chip"><span class="icon">💻</span>Linux</span>
+          <span class="tech-chip"><span class="icon">🔐</span>Auth segura</span>
+          <span class="tech-chip"><span class="icon">📦</span>Contenedores</span>
         </div>
       </div>
     </div>
   </div>
-</label>
+</section>
 
-<img src="imagenes/flecha.png" alt="flecha" id="flecha">
+<div class="divider"></div>
 
-<script src="script.js"></script>
+<!-- PROYECTOS -->
+<section class="section" id="proyectos">
+  <div class="section-label">Trabajo seleccionado</div>
+  <h2 class="section-title">Proyectos</h2>
+  <p class="section-desc">Soluciones reales con tecnologías modernas y arquitecturas bien estructuradas.</p>
+  <div class="projects-grid">
+    <div class="project-card">
+      <span class="project-tag">Full Stack · Cloud</span>
+      <h3>SahlaFix</h3>
+      <p>Aplicación web Flask con arquitectura en capas desplegada en AWS EC2. Gestión de usuarios, autenticación completa e imágenes de perfil almacenadas en S3.</p>
+    </div>
+    <div class="project-card">
+      <span class="project-tag">Backend · Python</span>
+      <h3>Registro de usuarios MySQL</h3>
+      <p>Formulario de registro con Python, Flask y mysql.connector. Persistencia de datos en base de datos relacional con validaciones del lado servidor.</p>
+    </div>
+    <div class="project-card">
+      <span class="project-tag">E-commerce · PHP</span>
+      <h3>Tienda de Zapatos</h3>
+      <p>Plataforma de compra online con autenticación, carrito y gestión de sesiones. Desplegada en producción con InfinityFree.</p>
+      <a href="https://mitiendazapatos.42web.io/" class="project-link" target="_blank">Ver en vivo →</a>
+    </div>
+    <div class="project-card">
+      <span class="project-tag">API · JavaScript</span>
+      <h3>Consumo de API externa</h3>
+      <p>Aplicación que consulta una API REST de datos caninos, los procesa y los presenta con diseño responsivo en HTML, CSS y JavaScript.</p>
+    </div>
+    <div class="project-card">
+      <span class="project-tag">JavaScript</span>
+      <h3>Gestor de tareas</h3>
+      <p>Aplicación de productividad ligera con HTML, CSS y JavaScript puro. CRUD de tareas con persistencia en localStorage.</p>
+    </div>
+    <div class="project-card">
+      <span class="project-tag">Próximo</span>
+      <h3>En desarrollo</h3>
+      <p>Nuevas aplicaciones con mayor complejidad: bases de datos no relacionales, integraciones avanzadas y arquitecturas más completas.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ASISTENTE IA -->
+<section class="section" id="asistente">
+  <div class="section-label">Asistente IA</div>
+  <h2 class="section-title">Habla con mi<br>asistente virtual</h2>
+  <p class="section-desc">¿Tienes alguna pregunta sobre mi trabajo, experiencia o proyectos? Pregunta aquí.</p>
+  <div class="chat-wrapper">
+    <div class="chat-header">
+      <div class="chat-status"></div>
+      <div>
+        <div class="chat-header-title">Asistente de Zakaria</div>
+        <div class="chat-header-sub">Responde preguntas sobre el portafolio</div>
+      </div>
+    </div>
+    <div id="chat-container"></div>
+    <div class="chat-input-area">
+      <textarea id="entrada" placeholder="Escribe tu pregunta..."></textarea>
+      <button id="enviar">Enviar</button>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACTO -->
+<section class="section" id="contacto">
+  <div class="section-label">Contacto</div>
+  <h2 class="section-title">¿Trabajamos juntos?</h2>
+  <p class="section-desc">Disponible para proyectos freelance, consultoría y oportunidades de empleo.</p>
+  <div class="contact-card">
+    <div class="contact-info">
+      <h3>Zakaria Kebour Dahmoun</h3>
+      <p>Desarrollador web & consultor tecnológico<br>Especialidad en backend, cloud y arquitectura.</p>
+    </div>
+    <div class="contact-links">
+      <div class="contact-item">📧 <a href="mailto:zakariakebour@gmail.com">zakariakebour@gmail.com</a></div>
+      <div class="contact-item">📞 <a href="tel:602826397">602 826 397</a></div>
+      <div class="contact-item">🔗 <a href="https://github.com/zakariakebour-arch" target="_blank">GitHub</a></div>
+      <div class="contact-item">💼 <a href="https://www.linkedin.com/in/zakaria-kebour-dahmoun-6b097b310/" target="_blank">LinkedIn</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-copy">© 2025 Zakaria Kebour Dahmoun</span>
+  <div class="footer-links">
+    <a href="https://github.com/zakariakebour-arch" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/zakaria-kebour-dahmoun-6b097b310/" target="_blank">LinkedIn</a>
+    <a href="https://zakariakebour-arch.github.io/Curriculum/" target="_blank">CV</a>
+  </div>
+</footer>
+
+<!-- SCROLL TO TOP -->
+<div id="flecha">↑</div>
+
+<script>
+
+</script>
 </body>
 </html>
