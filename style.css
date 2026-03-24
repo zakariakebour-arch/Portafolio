@@ -139,7 +139,7 @@ nav {
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
  
 .hero h1 {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: clamp(42px, 7vw, 80px);
   font-weight: 800;
   line-height: 1.05;
