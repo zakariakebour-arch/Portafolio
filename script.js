@@ -46,7 +46,7 @@ function agregarMensaje(msg, clase) {
 async function mandarChatbot(mensajeUsuario) {
   historial.push({ role: "user", content: mensajeUsuario });
   try {
-    const res  = await fetch("https://lasciviously-cibarian-fe.ngrok-free.dev/chat ", {
+    const res  = await fetch("https://lasciviously-cibarian-fe.ngrok-free.dev/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ messages: historial })
