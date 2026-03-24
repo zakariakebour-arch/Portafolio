@@ -274,6 +274,9 @@ nav {
   transition: border-color 0.3s, box-shadow 0.3s;
   opacity: 0; transform: translateY(30px);
   transition: opacity 0.5s, transform 0.5s, border-color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .tech-stack-card.visible { opacity: 1; transform: translateY(0); }
 .tech-stack-card:hover {
