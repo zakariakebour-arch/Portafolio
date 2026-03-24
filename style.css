@@ -205,11 +205,7 @@ nav {
   letter-spacing: 2px; text-transform: uppercase;
   color: var(--accent); margin-bottom: 16px;
 }
-.section-label::before {
-  content: "";
-  width: 20px; height: 1px;
-  background: var(--accent);
-}
+
 .section-title {
   font-family: var(--font-display);
   font-size: clamp(28px, 4vw, 44px);
