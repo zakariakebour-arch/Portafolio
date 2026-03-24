@@ -46,7 +46,7 @@ function agregarMensaje(msg, clase) {
 async function mandarChatbot(mensajeUsuario) {
   historial.push({ role: "user", content: mensajeUsuario });
   try {
-    const res  = await fetch("https://13.60.41.242:5000/chat", {
+    const res  = await fetch("http://13.60.41.242:5000/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ messages: historial })
